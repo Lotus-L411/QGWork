@@ -1,7 +1,7 @@
 package dao;
 
 import model.Student;
-import model.User;
+
 import util.DBUtil;
 
 import java.sql.Connection;

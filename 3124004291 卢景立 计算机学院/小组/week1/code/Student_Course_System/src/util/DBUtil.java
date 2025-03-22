@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import static java.lang.Class.forName;
+//import static java.lang.Class.forName;
 
 public class DBUtil {
     // JDBC URL，添加 serverTimezone 参数

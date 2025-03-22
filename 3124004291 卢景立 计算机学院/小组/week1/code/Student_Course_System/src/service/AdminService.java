@@ -5,11 +5,6 @@ import dao.StudentCourseDao;
 import dao.StudentDao;
 import model.Course;
 import model.Student;
-import util.DBUtil;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
