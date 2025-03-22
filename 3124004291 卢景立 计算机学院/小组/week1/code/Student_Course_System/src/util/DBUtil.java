@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import static java.lang.Class.forName;
+//import static java.lang.Class.forName;
 
 public class DBUtil {
     // JDBC URL，添加 serverTimezone 参数
@@ -12,16 +12,16 @@ public class DBUtil {
     private static final String USER = "root"; // 数据库用户名
     private static final String PASSWORD = "123456"; // 数据库密码
 
-//    static {
-//        try {
-//            // 加载 MySQL
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            System.out.println("MySQL 驱动加载成功！");
-//        } catch (ClassNotFoundException e) {
-//            System.out.println("MySQL 驱动加载失败！");
-//            e.printStackTrace();
-//        }
-//    }
+    //    static {
+    //        try {
+    //            // 加载 MySQL
+    //            Class.forName("com.mysql.cj.jdbc.Driver");
+    //            System.out.println("MySQL 驱动加载成功！");
+    //        } catch (ClassNotFoundException e) {
+    //            System.out.println("MySQL 驱动加载失败！");
+    //            e.printStackTrace();
+    //        }
+    //    }
 
     /**
      * 获取数据库连接
