@@ -31,7 +31,7 @@ public class AdminService {
             System.out.println("6. 查询某学生的选课情况");
             System.out.println("7. 添加课程");
             System.out.println("8. 退出");
-            System.out.print("请选择操作（输入 1-7）：");
+            System.out.print("请选择操作（输入 1-8）：");
 
             int choice = sc.nextInt();
             sc.nextLine(); // 清除缓冲区
@@ -142,10 +142,10 @@ public class AdminService {
         sc.nextLine(); // 清除缓冲区
 
         List<Course> courses = studentCourseDao.findCoursesByStudentId(studentId);
-            if (courses.isEmpty()) {
-                System.out.println("该学生还未选任何课程~~~~~");
-                return;
-            }
+        if (courses.isEmpty()) {
+            System.out.println("该学生还未选任何课程~~~~~");
+            return;
+        }
         System.out.println("===== 学生选课情况 =====");
         for (Course course : courses) {
             System.out.println("ID: " + course.getId() + ", 名称: " + course.getName() + ", 学分: " + course.getCredit());
