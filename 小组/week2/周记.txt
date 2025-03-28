@@ -1,0 +1,23 @@
+本周学习了HTML，CSS，JS，VUE.
+
+ 
+VUE收获与思考
+响应式原理理解加深：理解了 data 属性如何通过 Object.defineProperty（Vue 2实现响应式。
+组件化开发的优点：通过拆分为小组件（如 TodoItem.vue），代码更易维护和复用。
+调试技巧提升：使用 Vue Devtools 检查组件层级和状态变化。
+
+CSS:
+ HTML 基础标签掌握;
+理解 <head> 和 <body> 的作用差异
+
+掌握 meta 标签的常用属性
+
+常用标签实践：
+文本标签：<h1>~<h6>、<p>、<span>
+列表：<ul>、<ol>、<li>
+表格：<table>、<tr>、<td> 的嵌套规则
+
+多媒体标签。
+本周通过大量手写代码巩固了HTML基础，尤其对表单验证和语义化标签有了深刻理解。下一步将重点突破HTML与CSS的联动开发！
+
+
