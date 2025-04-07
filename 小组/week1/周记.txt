@@ -1,0 +1,32 @@
+####MySQL 
+基础语法学习
+数据库/表操作
+	CREATE DATABASE school;
+	USE school;
+	CREATE TABLE students (
+	    id INT PRIMARY KEY AUTO_INCREMENT,
+	    name VARCHAR(50) NOT NULL,
+	    age INT CHECK (age > 0)
+	);
+掌握 CREATE/ALTER/DROP 语句
+理解约束条件（PRIMARY KEY, NOT NULL, CHECK）
+安全规范：防止SQL注入
+String sql = "SELECT * FROM users WHERE username = ?";
+PreparedStatement stmt = conn.prepareStatement(sql);
+stmt.setString(1, inputUsername)
+
+通过与数据库的连接，加深了代码的理解，更加熟练的学会了使用数据库。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
