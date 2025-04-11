@@ -9,7 +9,6 @@ public class User {
     private String password; // 密码
     private String role; // 角色：STUDENT 或 ADMIN
 
-
     // 构造方法
     public User() {}
 
@@ -18,9 +17,9 @@ public class User {
         this.username = username;
         this.password = password;
         this.role = role;
-
     }
 
+    // Getter 和 Setter 方法
     public int getId() {
         return id;
     }
@@ -52,5 +51,4 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
-
 }
