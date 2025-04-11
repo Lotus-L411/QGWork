@@ -19,7 +19,7 @@ public class UserDao {
      * @param username 用户名
      * @return 用户对象，如果未找到返回 null
      */
-    public User findByUsername(String username) {
+    public static User findByUsername(String username) {
         String sql = "SELECT * FROM users WHERE username = ?";
         try (Connection conn = DBUtil.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -69,6 +69,20 @@ public class UserDao {
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
+        }
+    }
+
+    public static void createUser(User user) throws SQLException {
+        String sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
+
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, user.getUsername());
+            stmt.setString(2, user.getPassword()); // 直接存储明文
+            stmt.setString(3, user.getRole());
+
+            stmt.executeUpdate();
         }
     }
 

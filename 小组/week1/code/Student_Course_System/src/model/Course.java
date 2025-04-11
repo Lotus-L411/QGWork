@@ -1,7 +1,5 @@
 package model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import java.time.LocalDate;
 
 
@@ -61,5 +59,15 @@ public class Course {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    @Override
+    public String toString() {
+        return "课程{" +
+                "名称：'" + name + '\'' +
+                ", 学分：" + credit +
+                ", 开始日期：" + startDate +
+                ", 终止日期：" + endDate +
+                '}';
     }
 }

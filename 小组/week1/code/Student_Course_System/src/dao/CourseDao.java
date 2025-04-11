@@ -62,4 +62,27 @@ public class CourseDao {
             return false;
         }
     }
+    public  List<Course> searchCourses(String keyword) throws SQLException {
+        List<Course> courses = new ArrayList<>();
+        String sql = "SELECT * FROM courses WHERE name LIKE ?";
+
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, "%" + keyword + "%");
+
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Course course = new Course();
+                course.setId(rs.getInt("id"));
+                course.setName(rs.getString("name"));
+                course.setCredit(rs.getInt("credit"));
+                course.setStartDate(rs.getObject("start_date", LocalDate.class));
+                course.setEndDate(rs.getObject("end_date", LocalDate.class));
+                courses.add(course);
+            }
+        }
+        return courses;
+    }
+
 }

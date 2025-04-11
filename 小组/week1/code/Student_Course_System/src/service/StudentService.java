@@ -6,6 +6,7 @@ import dao.StudentDao;
 import model.Course;
 
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class StudentService {
     private Scanner sc = new Scanner(System.in);
     private StudentDao studentDao = new StudentDao();
 
-    public void showstudentMenu(int studentId) {
+    public void showstudentMenu(int studentId) throws SQLException {
         while (true) {
             System.out.println("===== 学生菜单 =====");
             System.out.println("1. 查看可选课程");
@@ -23,7 +24,8 @@ public class StudentService {
             System.out.println("3. 退选课程");
             System.out.println("4. 查看已选课程");
             System.out.println("5. 修改手机号");
-            System.out.println("6. 退出");
+            System.out.println("6. 搜索课程");
+            System.out.println("7. 退出");
             System.out.print("请选择操作（输入 1-6）：");
 
             int choice = sc.nextInt();
@@ -46,6 +48,9 @@ public class StudentService {
                     updatephone(studentId);
                     break;
                 case 6:
+                System.out.println(SearchCourses());
+                        break;
+                case 7:
                     System.out.println("退出学生菜单。");
                     return;
                 default:
@@ -120,5 +125,12 @@ public class StudentService {
             System.out.println("手机号更新失败，请重试！");
         }
 
+    }
+
+    private List<Course> SearchCourses() throws SQLException {
+        System.out.println("输入课程名称：");
+        String searchKeyword = sc.nextLine();
+        CourseDao courseDao = new CourseDao();
+        return courseDao.searchCourses(searchKeyword);
     }
 }

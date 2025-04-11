@@ -7,6 +7,7 @@ import service.AdminService;
 import service.AuthService;
 import service.StudentService;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 
@@ -17,7 +18,7 @@ public class login_register {
     private static AdminService adminService = new AdminService();
     private static StudentDao studentDao = new StudentDao();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         while (true) {
             System.out.println("===========================");
             System.out.println(" 学生选课管理系统");
@@ -49,7 +50,7 @@ public class login_register {
     /**
      * 用户登录
      */
-    private static void login() {
+    private static void login() throws SQLException {
         System.out.print("请输入用户名：");
         String username = sc.nextLine();
         System.out.print("请输入密码：");
